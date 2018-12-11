@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="itemsmapper">
+	<select id="getAllItems" resultType="Items">
+		select * from items
+	</select>
+
+	<!--添加items -->
+	<insert id="insertOneItems" parameterType="com.redfield.pojo.Items">
+		insert into
+		items(itemName,itemType,itemColor,itemBrand,itemDetail,itemPrice)
+		values(#{itemName},#{itemType},#{itemColor},#{itemBrand},#{itemDetail},#{itemPrice})
+	</insert>
+
+	<!--删除items -->
+	<delete id="deleteOneItemsById" parameterType="int">
+		delete from items
+		where itemid1=#{tid}
+	</delete>
+</mapper>
